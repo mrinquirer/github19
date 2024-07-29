@@ -1,1 +1,40 @@
+ID
+WebElement element = driver.findElement(By.id("elementID"));
+2. ClassName
+WebElement element = driver.findElement(By.className("elementClass"));
+3. TagNameWebElement element = driver.findElement(By.tagName("input"));
+4. CSS SelectorWebElement element = driver.findElement(By.cssSelector("#elementID"));
+or
+WebElement element = driver.findElement(By.cssSelector(".elementClass"));
+5. XPathWebElement element = driver.findElement(By.xpath("//input[@id='elementID']"));
+or
+WebElement element = driver.findElement(By.xpath("//input[@class='elementClass']"));
+Example Application to GUVI Registration Page
+For example, let's assume we have the following HTML structure for the registration page:
+<input type="text" id="first_name" 
+class="register-input" />
+<input type="text"
+ class="register-input" 
+ name="last_name" />
+<input type="password" 
+class="register-input" name="password" />
+We can locate these elements in Java as follows:
+ID
+WebElement firstName = driver.findElement(By.id("first_name"));
+ClassName
+WebElement registerInput = driver.findElement(By.className("register-input"));
+TagName
+WebElement inputField = driver.findElement(By.tagName("input"));
+CSS Selector
+WebElement firstNameByCss = driver.findElement(By.cssSelector("#first_name"));
+or
+WebElement registerInputByCss = driver.findElement(By.cssSelector(".register-input"));
+XPath
+WebElement firstNameByXpath = driver.findElement(By.xpath("//input[@id='first_name']"));
+or
+WebElement registerInputByXpath = driver.findElement(By.xpath("//input[@class='register-input']"));
 
+
+        You will need to inspect the actual elements on the GUVI registration page to
+ identify the correct IDs, class names, tag names, and other attributes
+  to use in your locators.
